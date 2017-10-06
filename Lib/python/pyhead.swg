@@ -211,5 +211,7 @@ typedef destructor freefunc;
 #if PY_VERSION_HEX < 0x03020000
 #define PyDescr_TYPE(x) (((PyDescrObject *)(x))->d_type)
 #define PyDescr_NAME(x) (((PyDescrObject *)(x))->d_name)
-#define Py_hash_t long
+#ifndef Py_hash_t
+typedef long Py_hash_t;
+#endif
 #endif
